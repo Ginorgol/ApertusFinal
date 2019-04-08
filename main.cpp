@@ -7,15 +7,14 @@
 
 int main(int argc, char* argv[])
 {
-	if(argc != 4)
-	{
-		std::cerr << "Missing Arguments ... Usage : ./Task_apertus width height image_path " << std::endl;
-		exit(1);
-	}
-
-	clock_t start, end; 
-	double timeTaken;
-
+    if(argc != 4)
+    {
+    	std::cerr << "Missing Arguments ... Usage : ./Task_apertus width height image_path " << std::endl;
+    	exit(1);
+    }	
+    clock_t start, end; 
+    double timeTaken;
+	
     int width = atoi(argv[1]);
     int height = atoi(argv[2]);
     const char * inputFileName = argv[3];
