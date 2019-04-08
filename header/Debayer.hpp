@@ -17,7 +17,7 @@ class Debayer
 public:
 	Debayer();
 
-	Debayer(RawImage &img);
+	explicit Debayer(RawImage &img);
 
 	~Debayer();
 

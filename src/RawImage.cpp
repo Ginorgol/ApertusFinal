@@ -8,7 +8,10 @@ RawImage::RawImage() :
 	_greenChannel1(nullptr),
 	_greenChannel2(nullptr), 
 	_blueChannel(nullptr), 
-	_colorImage(nullptr)
+	_colorImage(nullptr),
+	_colorImageRed(nullptr),
+	_colorImageGreen(nullptr),
+	_colorImageBlue(nullptr)
 {
 }
 

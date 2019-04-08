@@ -20,7 +20,7 @@ class ProcessImage
 public:
 	ProcessImage();
 
-	ProcessImage(RawImage &img);
+	explicit ProcessImage(RawImage &img);
 
 	~ProcessImage();
 

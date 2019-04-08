@@ -19,7 +19,7 @@ class Ppm
 public:
 	Ppm();
 
-	Ppm(RawImage &img);
+	explicit Ppm(RawImage &img);
 
 	~Ppm();
 

@@ -9,9 +9,9 @@ Debayer::Debayer(RawImage &img)
 	_width = img.GetWidth();
 	_colorImage = img.GetColorImage();
 
-	_red = new uint8_t[_width * _height];
-	_green = new uint8_t[_width * _height];
-	_blue = new uint8_t[_width * _height];
+	_red = img.GetColorImageRed();
+	_green = img.GetColorImageGreen();
+	_blue = img.GetColorImageBlue();
 
 	uint8_t * redChannel = img.GetRedChannel();
 	uint8_t * greenChannel1 = img.GetGreenChannel1();
