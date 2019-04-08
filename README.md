@@ -5,7 +5,7 @@ The task is to Process a Raw12 image format and convert it to a PPM image.(https
 ## Build Instructions for Linux Environment
 * Clone the repository using `git clone git@github.com:kiquance21/ApertusFinal.git`
 * Move to the cloned directory `cd PATH_OF_DIR`
-* Move to build the folder  `cd build`
+* Make build folder and Move in it   `mkdir build && cd build`
 * `cmake ..`
 * `make`
 * `./ApertusTask 4096 3072 ../test.raw12`
