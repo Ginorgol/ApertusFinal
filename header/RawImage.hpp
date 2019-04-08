@@ -45,7 +45,6 @@ public:
 	uint8_t * GetColorImageRed();
 	uint8_t * GetColorImageGreen();
 	uint8_t * GetColorImageBlue();
-
 };
 
 #endif

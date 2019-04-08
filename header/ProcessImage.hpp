@@ -27,7 +27,6 @@ public:
 	void SeperateChannels();
 	void DisplayChannelIntensityUtil();
 	void DisplayChannelIntensity(uint8_t * channel, const char * channelName);
-
 };
 
 #endif

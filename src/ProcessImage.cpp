@@ -1,4 +1,4 @@
-#include "../header/ProcessImage.hpp"
+#include "ProcessImage.hpp"
 
 ProcessImage::ProcessImage()
 {
@@ -61,7 +61,7 @@ void ProcessImage::DisplayChannelIntensityUtil()
 
 void ProcessImage::DisplayChannelIntensity(uint8_t * channel, const char * channelName)
 {
-	std::cout << "Intensity values of the first 5 * 5  of " << channelName << std::endl;
+	std::cout << "Intensity values of the first 5 * 5  patch of " << channelName << std::endl;
 	for(unsigned int row = 0 ; row < 5 ; ++row)
 	{
 		for(unsigned int col = 0 ; col < 5 ; ++col)

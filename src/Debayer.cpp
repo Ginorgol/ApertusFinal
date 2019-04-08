@@ -1,4 +1,4 @@
-#include "../header/Debayer.hpp"
+#include "Debayer.hpp"
 
 Debayer::Debayer()
 {
@@ -22,7 +22,7 @@ Debayer::Debayer(RawImage &img)
 	unsigned int greenOffset1 = 0;
 	unsigned int greenOffset2 = 0;
 	unsigned int blueOffset = 0;
-
+	//Fill the channels with known value
 	for (unsigned int row = 0 ; row < _height ; ++row)
 	{
 		for (unsigned int col = 0 ; col < _width ; ++col)

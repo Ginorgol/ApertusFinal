@@ -1,4 +1,4 @@
-#include "../header/RawImage.hpp"
+#include "RawImage.hpp"
 
 RawImage::RawImage() : 
 	_height(3072),

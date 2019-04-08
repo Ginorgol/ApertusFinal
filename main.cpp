@@ -23,29 +23,26 @@ int main(int argc, char* argv[])
     RawImage img(inputFileName,width,height);
 
     start = clock();
-
+    //Extract Channels , Print Intensity
     ProcessImage processer(img);
     processer.SeperateChannels();
     processer.DisplayChannelIntensityUtil();
-
     end = clock();
     timeTaken = double(end - start) / double(CLOCKS_PER_SEC);
     std::cout << "Time taken to process (SeperateChannels , Display Intensity) the image is : " << std::fixed << timeTaken << std::setprecision(5) << " seconds" << std::endl;
 
     start = clock();
-
+    //Debayer image usign Billinear Interpolation
     Debayer debayer(img);
     debayer.DebayerUtil();
-
     end = clock();
     timeTaken = double(end - start) / double(CLOCKS_PER_SEC);
     std::cout << "Time taken to Debayer the image is : " << std::fixed << timeTaken << std::setprecision(5) << " seconds" << std::endl;
 
     start = clock();
-
+    //Write the channels and Image
     Ppm ppmwrite(img);
     ppmwrite.WriteImageUtil(IMG_BASE);
-
     end = clock();
     timeTaken = double(end - start) / double(CLOCKS_PER_SEC);
     std::cout << "Time taken to Write the Colored and Channel images is : " << std::fixed << timeTaken << std::setprecision(5) << " seconds" << std::endl;
