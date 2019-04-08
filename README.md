@@ -1,8 +1,8 @@
-#Apertus C++ Challenge (T872)
+# Apertus C++ Challenge (T872)
 
 The task is to Process a Raw12 image format and convert it to a PPM image.(https://lab.apertus.org/T872)
 
-##Build Instructions for Linux Environment
+## Build Instructions for Linux Environment
 * Clone the repository using `git clone git@github.com:kiquance21/ApertusFinal.git`
 * Move to the cloned directory `cd PATH_OF_DIR`
 * Move to build the folder  `cd build`
@@ -11,7 +11,7 @@ The task is to Process a Raw12 image format and convert it to a PPM image.(https
 * `./ApertusTask 4096 3072 ../test.raw12`
 
 
-##References Used
+## References Used
 * Understanding RAW12 (https://wiki.apertus.org/index.php/RAW12)
 * C++ coding guidelines ((https://gist.github.com/lefticus/10191322)
 * Cmake (https://stackoverflow.com/questions/17511496/how-to-create-a-shared-library-with-cmake)
