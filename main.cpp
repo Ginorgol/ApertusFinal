@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
     //Extract Channels , Print Intensity
     ProcessImage processer(img);
     processer.SeperateChannels();
-    processer.DisplayChannelIntensityUtil();
+    processer.DisplayIntensityProcess();
     end = clock();
     timeTaken = double(end - start) / double(CLOCKS_PER_SEC);
     std::cout << "Time taken to process (SeperateChannels , Display Intensity) the image is : " << std::fixed << timeTaken << std::setprecision(5) << " seconds" << std::endl;
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
     start = clock();
     //Debayer image usign Billinear Interpolation
     Debayer debayer(img);
-    debayer.DebayerUtil();
+    debayer.DebayerProcess();
     end = clock();
     timeTaken = double(end - start) / double(CLOCKS_PER_SEC);
     std::cout << "Time taken to Debayer the image is : " << std::fixed << timeTaken << std::setprecision(5) << " seconds" << std::endl;
@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
     start = clock();
     //Write the channels and Image
     Ppm ppmwrite(img);
-    ppmwrite.WriteImageUtil(IMG_BASE);
+    ppmwrite.WriteImageProcess(IMG_BASE);
     end = clock();
     timeTaken = double(end - start) / double(CLOCKS_PER_SEC);
     std::cout << "Time taken to Write the Colored and Channel images is : " << std::fixed << timeTaken << std::setprecision(5) << " seconds" << std::endl;

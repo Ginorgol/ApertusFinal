@@ -21,7 +21,7 @@ public:
 
 	~Debayer();
 
-	void DebayerUtil();
+	void DebayerProcess();
 	void BilinearInterpolateGreen();
 	void BilinearInterpolateRed();
 	void BilinearInterpolateBlue();

@@ -23,7 +23,7 @@ public:
 
 	~Ppm();
 
-	void WriteImageUtil(const std::string imgBasePath);
+	void WriteImageProcess(const std::string imgBasePath);
 	void WriteChannels(uint8_t * channel , const std::string filename);
 	void WriteColorImage(const std::string filename);
 };

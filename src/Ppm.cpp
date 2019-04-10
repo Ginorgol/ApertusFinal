@@ -18,7 +18,7 @@ Ppm::Ppm(RawImage &img)
 	_colorImage = img.GetColorImage();
 }
 
-void Ppm::WriteImageUtil(const std::string imgBasePath)
+void Ppm::WriteImageProcess(const std::string imgBasePath)
 {
 	WriteChannels(_redChannel , imgBasePath + "redChannel.pgm");
 	WriteChannels(_greenChannel1 , imgBasePath + "greenChannel1.pgm");

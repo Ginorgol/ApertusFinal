@@ -25,7 +25,7 @@ public:
 	~ProcessImage();
 
 	void SeperateChannels();
-	void DisplayChannelIntensityUtil();
+	void DisplayIntensityProcess();
 	void DisplayChannelIntensity(uint8_t * channel, const char * channelName);
 };
 

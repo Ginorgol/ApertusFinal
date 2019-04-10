@@ -51,7 +51,7 @@ Debayer::Debayer(RawImage &img)
 	}
  }
 
-void Debayer::DebayerUtil()
+void Debayer::DebayerProcess()
 {
 	BilinearInterpolateRed();
 	BilinearInterpolateGreen();

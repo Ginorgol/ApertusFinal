@@ -51,7 +51,7 @@ void ProcessImage::SeperateChannels()
 	}
 }
 
-void ProcessImage::DisplayChannelIntensityUtil()
+void ProcessImage::DisplayIntensityProcess()
 {
 	DisplayChannelIntensity(_redChannel, "Red Channel");
 	DisplayChannelIntensity(_greenChannel1, "Green1 Channel");
