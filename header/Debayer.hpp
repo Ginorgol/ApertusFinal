@@ -8,6 +8,11 @@ class Debayer
 	unsigned int _height;
 	unsigned int _width;
 
+	uint8_t * _redChannel;
+	uint8_t * _greenChannel1;
+	uint8_t * _greenChannel2; 
+	uint8_t * _blueChannel;
+
 	uint8_t * _red;
 	uint8_t * _green;
 	uint8_t * _blue;
@@ -21,6 +26,7 @@ public:
 
 	~Debayer();
 
+	void InitialiseColorChannels();
 	void DebayerProcess();
 	void BilinearInterpolateGreen();
 	void BilinearInterpolateRed();

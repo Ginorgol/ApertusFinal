@@ -3,6 +3,7 @@
 Debayer::Debayer()
 {
 }
+
 Debayer::Debayer(RawImage &img)
 {
 	_height = img.GetHeight();
@@ -13,11 +14,14 @@ Debayer::Debayer(RawImage &img)
 	_green = img.GetColorImageGreen();
 	_blue = img.GetColorImageBlue();
 
-	uint8_t * redChannel = img.GetRedChannel();
-	uint8_t * greenChannel1 = img.GetGreenChannel1();
-	uint8_t * greenChannel2 = img.GetGreenChannel2();
-	uint8_t * blueChannel = img.GetBlueChannel();
+	_redChannel = img.GetRedChannel();
+	_greenChannel1 = img.GetGreenChannel1();
+	_greenChannel2 = img.GetGreenChannel2();
+	_blueChannel = img.GetBlueChannel();
+ }
 
+void Debayer::InitialiseColorChannels()
+{
 	unsigned int redOffset = 0;
 	unsigned int greenOffset1 = 0;
 	unsigned int greenOffset2 = 0;
@@ -29,30 +33,31 @@ Debayer::Debayer(RawImage &img)
 		{
 			if(row % 2 == 0 && col % 2 == 0)
 			{
-				_red[_width * row + col] = redChannel[redOffset];
+				_red[_width * row + col] = _redChannel[redOffset];
 				++redOffset;
 			}
 			if(row % 2 == 0 && col % 2 != 0)
 			{
-				_green[_width * row + col] = greenChannel1[greenOffset1];
+				_green[_width * row + col] = _greenChannel1[greenOffset1];
 				++greenOffset1;
 			}
 			if(row % 2 != 0 && col % 2 == 0)
 			{
-				_green[_width * row + col] = greenChannel2[greenOffset2];
+				_green[_width * row + col] = _greenChannel2[greenOffset2];
 				++greenOffset2;
 			}
 			if(row % 2 != 0 && col % 2 != 0)
 			{
-				_blue[_width * row + col] = blueChannel[blueOffset];
+				_blue[_width * row + col] = _blueChannel[blueOffset];
 				++blueOffset;
 			}
 		}
 	}
- }
+}
 
 void Debayer::DebayerProcess()
 {
+	InitialiseColorChannels();
 	BilinearInterpolateRed();
 	BilinearInterpolateGreen();
 	BilinearInterpolateBlue();
@@ -76,6 +81,7 @@ void Debayer::BilinearInterpolateRed()
         }
 	}
 }
+
 void Debayer::BilinearInterpolateBlue()
 {
 	 for(unsigned int  index = (2 * _width) + 2 ; index < _width * _height; index += 2)
@@ -90,6 +96,7 @@ void Debayer::BilinearInterpolateBlue()
         }
     }
 }
+
 void Debayer::BilinearInterpolateGreen()
 {
     for(unsigned int index = _width + 1; index < _width * _height; index += 2)
@@ -141,6 +148,7 @@ void Debayer::FillColorImage()
 		_colorImage[index + 2] = _blue[index / 3];
 	}
 }
+
 Debayer::~Debayer()
 {
 }
